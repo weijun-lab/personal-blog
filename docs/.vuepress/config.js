@@ -2,11 +2,11 @@ import { blogPlugin } from '@vuepress/plugin-blog'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
-
+console.log(process.env.NODE_ENV)
 export default defineUserConfig({
   lang: 'en-US',
   head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
-  // base: '/personal-blog',
+  base: process.env.NODE_ENV=="development"?'':'/personal-blog',
   title: '子禾',
   description: '不积跬步无以至千里',
 
