@@ -5,12 +5,13 @@ import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   lang: 'en-US',
-  base: '/personal-blog',
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+  // base: '/personal-blog',
+  title: '子禾',
+  description: '不积跬步无以至千里',
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: '/images/logo.png',
 
     navbar: [
       '/',

@@ -2,7 +2,7 @@ export const redirects = JSON.parse("{}")
 
 export const routes = Object.fromEntries([
   ["/get-started.html", { loader: () => import(/* webpackChunkName: "get-started.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/get-started.html.js"), meta: {"title":"Get Started"} }],
-  ["/", { loader: () => import(/* webpackChunkName: "index.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"Home"} }],
+  ["/", { loader: () => import(/* webpackChunkName: "index.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"个人主页"} }],
   ["/posts/archive1.html", { loader: () => import(/* webpackChunkName: "archive1.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/posts/archive1.html.js"), meta: {"_blog":{"title":"Archive Article1","author":"","date":"1998-01-01T00:00:00.000Z","category":["History"],"tag":["WWI"],"excerpt":"\n<h2>Heading 2</h2>\n<p>Here is the content.</p>\n<h3>Heading 3</h3>\n<p>Here is the content.</p>\n"},"title":"Archive Article1"} }],
   ["/posts/archive2.html", { loader: () => import(/* webpackChunkName: "archive2.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/posts/archive2.html.js"), meta: {"_blog":{"title":"Archive Article2","author":"","date":"1998-01-02T00:00:00.000Z","category":["History"],"tag":["WWII"],"excerpt":"\n<h2>Heading 2</h2>\n<p>Here is the content.</p>\n<h3>Heading 3</h3>\n<p>Here is the content.</p>\n"},"title":"Archive Article2"} }],
   ["/posts/article1.html", { loader: () => import(/* webpackChunkName: "article1.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/posts/article1.html.js"), meta: {"_blog":{"title":"Article 1","author":"","date":"2022-01-01T00:00:00.000Z","category":["CategoryA"],"tag":["tag A","tag B"],"excerpt":"\n<h2>Heading 2</h2>\n<p>Here is the content.</p>\n<h3>Heading 3</h3>\n<p>Here is the content.</p>\n"},"title":"Article 1"} }],
@@ -36,3 +36,20 @@ export const routes = Object.fromEntries([
   ["/article/", { loader: () => import(/* webpackChunkName: "index.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/article/index.html.js"), meta: {"title":"Articles"} }],
   ["/timeline/", { loader: () => import(/* webpackChunkName: "index.html" */"E:/学习/personal-blog/docs/.vuepress/.temp/pages/timeline/index.html.js"), meta: {"title":"Timeline"} }],
 ]);
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateRoutes) {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+  }
+  if (__VUE_HMR_RUNTIME__.updateRedirects) {
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ routes, redirects }) => {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  })
+}
